@@ -17,16 +17,17 @@ import java.util.Date;
 
 public class Utilites_1
 {
-    public static final int wait_Time =10;
-    public static  final  int page_Loading_Time=10;
+    public static final int wait_Time =40;
+    public static  final  int page_Loading_Time=40;
     public static String generateEmailtimestamp(){
         Date date=new Date();
         String timestamp= date.toString().replace(" ","_").replace(":","_");
         return "anumandlasreenu"+timestamp+"@gmail.com";
     }
     @DataProvider(name = "testdata")
-    public static Object[][] getTestDataFromExcel(String sheetname) throws IOException {
-        File f=new File(System.getProperty("user.dir")+"\\src\\test\\resources\\Testdata\\TestDataForLogin.xlsx\"");
+    public static Object[][] getTestDataFromExcel() throws IOException {
+        String sheetname="LoginData";
+        File f=new File(System.getProperty("user.dir")+"\\src\\test\\resources\\Testdata\\TestDataForLogin.xlsx");
         FileInputStream fi=new FileInputStream(f);
         XSSFWorkbook workbook=new XSSFWorkbook(fi);
         XSSFSheet XSSFSheet = workbook.getSheet(sheetname);

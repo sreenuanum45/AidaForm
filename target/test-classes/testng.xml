@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="GUI Testing Suite" verbose="1" parallel="classes" thread-count="2">
+    <test name="GUI Tests">
+        <classes>
+            <class name="GuiTesting.LoginTest"/>
+            <class name="GuiTesting.Test1"/>
+        </classes>
+    </test>
+
+</suite>

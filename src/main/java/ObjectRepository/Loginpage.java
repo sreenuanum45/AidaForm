@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 public class Loginpage {
     RemoteWebDriver driver;
     FluentWait<RemoteWebDriver> wait;
-    @FindBy(name="email")
+    @FindBy(xpath="//input[@name='email']")
     private org.openqa.selenium.WebElement email;
 
     @FindBy(name="password")
