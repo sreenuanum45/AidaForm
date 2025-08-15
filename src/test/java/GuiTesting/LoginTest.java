@@ -28,6 +28,7 @@ public class LoginTest extends BaseClass {
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(NoSuchElementException.class);
         driver.get(p.getProperty("loginurl"));
+
     }
     @Test(priority = 1,dataProviderClass = Utilites_1.class ,dataProvider = "testdata",invocationCount = 2, successPercentage = 50,description = "Verify the login functionality",groups = {"smoke","regression"})
     public void verifyTheLoginFunctionality(String email, String password) throws IOException, InterruptedException {
