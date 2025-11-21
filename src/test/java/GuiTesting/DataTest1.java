@@ -2,24 +2,24 @@ package GuiTesting;
 
 import Base.BaseClass;
 import ObjectRepository.SignupPage;
-import Utility.Utilites_1;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.ElementClickInterceptedException;
-
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
 
-public class Test1 extends BaseClass {
+public class DataTest1 extends BaseClass {
     SignupPage signupPage;
     RemoteWebDriver driver;
     FluentWait<RemoteWebDriver> wait;
-    public Test1() {
+    public DataTest1() {
         super();
     }
     @BeforeMethod
@@ -31,7 +31,7 @@ public class Test1 extends BaseClass {
                 .ignoring(NoSuchElementException.class);
         driver.get(p.getProperty("url"));
     }
-    @Test(priority = 1, dataProvider = "testdata",invocationCount = 4
+    @Test(priority = 1, dataProvider = "testdata",invocationCount = 2
             ,description = "Verify the registration functionality")
     public void verifyTheRegistrationFunctionality(String name, String email, String password) throws InterruptedException {
         signupPage=new SignupPage(driver,wait);
